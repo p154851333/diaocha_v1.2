@@ -33,7 +33,9 @@
 	<script language="javascript">window.onload=tableFix;</script>
 	<script type="text/javascript">
 		function DelAdmin(aid){
-			if(confirm("确定要删除这个用户吗？")==true)
+			if (aid=="1") {
+				alert("此用户为超级管理员，不可删除。");
+			}else if(confirm("确定要删除这个用户吗？")==true)
 				window.location="adminDel.do?userId="+aid;
 			}
 	</script>

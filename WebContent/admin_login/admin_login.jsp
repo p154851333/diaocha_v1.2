@@ -13,12 +13,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="expires" content="0"> 
 	<title>登录界面</title>
-    <link href="admin_login/css/default.css" rel="stylesheet" type="text/css" />
+    <link href="css/default.css" rel="stylesheet" type="text/css" />
 	<!--必要样式-->
-    <link href="admin_login/css/styles.css" rel="stylesheet" type="text/css" />
-    <link href="admin_login/css/demo.css" rel="stylesheet" type="text/css" />
-    <link href="admin_login/css/loaders.css" rel="stylesheet" type="text/css" />
-    <link href="admin_login/layui/css/layui.css" rel="stylesheet" type="text/css" />
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="css/demo.css" rel="stylesheet" type="text/css" />
+    <link href="css/loaders.css" rel="stylesheet" type="text/css" />
+    <link href="layui/css/layui.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<div class='login'>
@@ -28,25 +28,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  <div class='login_fields'>
 	    <div class='login_fields__user'>
 	      <div class='icon'>
-	        <img alt="" src='admin_login/img/user_icon_copy.png'>
+	        <img alt="" src='img/user_icon_copy.png'>
 	      </div>
-	      <input name="login" placeholder='用户名' maxlength="16" type='text' autocomplete="off"/>
+	      <input name="login" placeholder='用户名' maxlength="16" type='text' autocomplete="off" value="admin"/>
 	        <div class='validation'>
-	          <img alt="" src='admin_login/img/tick.png'>
+	          <img alt="" src='img/tick.png'>
 	        </div>
 	    </div>
 	    <div class='login_fields__password'>
 	      <div class='icon'>
-	        <img alt="" src='admin_login/img/lock_icon_copy.png'>
+	        <img alt="" src='img/lock_icon_copy.png'>
 	      </div>
 	      <input name="pwd" placeholder='密码' maxlength="16" type='text' autocomplete="off">
 	      <div class='validation'>
-	        <img alt="" src='admin_login/img/tick.png'>
+	        <img alt="" src='img/tick.png'>
 	      </div>
 	    </div>
 	    <div class='login_fields__password'>
 	      <div class='icon'>
-	        <img alt="" src='admin_login/img/key.png'>
+	        <img alt="" src='img/key.png'>
 	      </div>
 	      <input name="code" placeholder='验证码' maxlength="4" type='text' name="ValidateNum" autocomplete="off">
 	      <div class='validation' style="opacity: 1; right: -5px;top: -3px;">
@@ -78,13 +78,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="OverWindows"></div>
     
 
-	<script type="text/javascript" src="admin_login/js/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript" src="admin_login/js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src='admin_login/js/stopExecutionOnTimeout.js?t=1'></script>
-    <script src="admin_login/layui/layui.js" type="text/javascript"></script>
-    <script src="admin_login/js/Particleground.js" type="text/javascript"></script>
-    <script src="admin_login/js/Treatment.js" type="text/javascript"></script>
-    <script src="admin_login/js/jquery.mockjax.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src='js/stopExecutionOnTimeout.js?t=1'></script>
+    <script src="layui/layui.js" type="text/javascript"></script>
+    <script src="js/Particleground.js" type="text/javascript"></script>
+    <script src="js/Treatment.js" type="text/javascript"></script>
+    <script src="js/jquery.mockjax.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		var canGetCookie = 0;//是否支持存储Cookie 0 不支持 1 支持
 		var CodeVal = 0;
@@ -184,7 +184,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	                //登陆
 	                var JsonData = { login: login, pwd: pwd, code1: code, code2: CodeVal.toUpperCase()};
 					//此处做为ajax内部判断
-					var url = "<%=basePath%>user/userLogin.do?op=userLogin";
+					var url = "<%=basePath%>adminlogin/loginAdmin.do";
 	                AjaxPost(url, JsonData,
  	                                function () {
 	                                    //ajax加载中
@@ -213,7 +213,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	                                            $('.success').fadeIn(1000);
 	                                            $('.success').html(data.Text);
 												//跳转操作
-	                                            location.href = "<%=basePath%>index.jsp";
+	                                            location.href = "<%=basePath%>admin/admin_index.jsp";
 	                                        } else {
 	                                            AjaxErro(data);
 	                                        }

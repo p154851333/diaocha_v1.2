@@ -9,6 +9,10 @@
     <package name="base" extends="struts-default" >
     </package>
      
+     <package name="adminlogin" extends="base" namespace="/adminlogin">
+     	<action name="loginAdmin" class="com.ec.survey.ctrl.AdminAction" method="loginAdmin">
+         </action>
+     </package>
      <package name="admin" extends="base" namespace="/admin">
          <action name="adminAdd" class="com.ec.survey.ctrl.AdminAction" method="adminAdd">
             <result type="redirectAction" name="success">adminManage</result>
@@ -103,8 +107,8 @@
             <result name="fail" type="redirect">/OpResult.jsp?op=reg&amp;ret=false</result>
          </action>
           <action name="userLogin" class="com.ec.survey.ctrl.UserManageAction" method="userLogin">
-            <result name="success" type="redirect" >/OpResult.jsp?op=login&amp;ret=true</result>
-            <result name="fail" type="redirect" > /OpResult.jsp?op=login&amp;ret=false</result>
+           <!--  <result name="success" type="redirect" >/OpResult.jsp?op=login&amp;ret=true</result>
+            <result name="fail" type="redirect" > /OpResult.jsp?op=login&amp;ret=false</result> -->
          </action>
       </package>
       

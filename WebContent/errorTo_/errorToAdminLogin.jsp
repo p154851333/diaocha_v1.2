@@ -6,7 +6,7 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";  
 %>  
 <%   
-      String url = basePath+"login.jsp";   //设置跳转的地址  
+      String url = basePath+"admin_login/admin_login.jsp";   //设置跳转的地址  
 %>  
 <html>  
    <head>              
